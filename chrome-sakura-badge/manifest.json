@@ -1,7 +1,7 @@
 {
     "name": "Sakura Internet Badge",
     "description": "表示されたページがさくらインターネットから提供されているかを確認します。",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "manifest_version": 2,
     "permissions": [
         "http://*/*", "https://*/*",
