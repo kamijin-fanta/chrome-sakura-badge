@@ -17,6 +17,7 @@ function render(s, tabId){
 function update(tabId){
     chrome.tabs.get(tabId, function(s){
         var host = s.url.split("/")[2];
+        var secure = window.location.protocol == "https:";
         var cache = localStorage.getItem(host);
 
         // if has old cache, delete cache
@@ -30,7 +31,10 @@ function update(tabId){
         if(cache){
             render(JSON.parse(cache), tabId);
         } else {
-            fetch("http://kamijin.sakura.ne.jp/host.php?host=" + host)
+            var url = "http://kamijin.sakura.ne.jp/host.php?host=";
+            if (secure)
+                url = "https://kamijin.sakura.ne.jp/host.php?host=";
+            fetch(url + host)
                 .then(s=>s.json())
                 .then(s=>{
                     s.date = new Date().valueOf();  // add date fieald
