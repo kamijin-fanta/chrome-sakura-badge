@@ -1,3 +1,4 @@
+var cacheExpire = 12 * 60 * 60 * 1000;  //12 hour 
 
 function render(s, tabId){
     var icon = s.isSakura ? "icon-enable" : "icon-disable";
@@ -17,12 +18,22 @@ function update(tabId){
     chrome.tabs.get(tabId, function(s){
         var host = s.url.split("/")[2];
         var cache = localStorage.getItem(host);
+
+        // if has old cache, delete cache
+        if(cache && (
+            !cache.date
+            || new Date(cache.date).valueOf() + cacheExpire < new Date().valueOf()
+        )) {
+            cache = undefined;
+        }
+
         if(cache){
             render(JSON.parse(cache), tabId);
         } else {
             fetch("http://kamijin.sakura.ne.jp/host.php?host=" + host)
                 .then(s=>s.json())
                 .then(s=>{
+                    s.date = new Date().valueOf();  // add date fieald
                     localStorage.setItem(host, JSON.stringify(s));
                     render(s, tabId);
                 });
