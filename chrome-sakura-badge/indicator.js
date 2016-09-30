@@ -3,7 +3,7 @@ var cacheExpire = 12 * 60 * 60 * 1000;  //12 hour
 function render(s, tabId){
     var icon = s.isSakura ? "icon-enable" : "icon-disable";
     chrome.browserAction.setBadgeText({
-        text: "" + (s.asn?s.asn:""),
+        text: getAsnName(s.asn),
         tabId: tabId
     });
     chrome.browserAction.setBadgeBackgroundColor({
@@ -18,7 +18,7 @@ function update(tabId){
     chrome.tabs.get(tabId, function(s){
         var host = s.url.split("/")[2];
         var secure = window.location.protocol == "https:";
-        var cache = localStorage.getItem(host);
+        var cache = JSON.parse(localStorage.getItem(host));
 
         // if has old cache, delete cache
         if(cache && (
@@ -29,7 +29,7 @@ function update(tabId){
         }
 
         if(cache){
-            render(JSON.parse(cache), tabId);
+            render(cache, tabId);
         } else {
             var url = "http://kamijin.sakura.ne.jp/host.php?host=";
             if (secure)
@@ -43,6 +43,23 @@ function update(tabId){
                 });
         }
     });
+}
+function getAsnName(asn) {
+    var showName = true;
+    var myStorage = JSON.parse(localStorage.getItem("emjemnfjellkddpigaggachjkfokfaal"));
+    if(myStorage && myStorage.opt_show_name == false)
+        showName = false;
+
+    switch(asn) {
+        case 9370:
+            return showName?"東京":"9370";
+        case 9371:
+            return showName?"大阪":"9371";
+        case 7684:
+            return showName?"石狩":"7684";
+        default:
+            return "";
+    }
 }
 
 chrome.runtime.onMessage.addListener(function(res, sender){
