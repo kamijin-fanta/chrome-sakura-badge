@@ -1,0 +1,527 @@
+[
+  {
+    "as": 9370,
+    "prefix": "27.133.128.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "27.133.247.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "27.133.252.0/22",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "27.134.240.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "36.53.0.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "36.53.128.0/18",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "49.212.0.0/16",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.65.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.66.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.70.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.72.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.73.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.75.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.78.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.116.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.120.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.121.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.168.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.215.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.228.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.229.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.233.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.239.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "49.212.246.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "59.106.0.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "59.106.128.0/18",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "59.106.192.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "59.106.224.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "59.106.240.0/22",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "61.211.224.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "61.211.236.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "103.15.0.0/22",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "103.57.4.0/22",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "103.198.4.0/22",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "110.44.128.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "110.74.32.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "110.74.64.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "110.232.160.0/21",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "110.232.168.0/21",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "112.78.112.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "112.78.192.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "112.78.202.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "112.78.203.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "112.78.211.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "112.78.212.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "112.109.0.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "113.20.160.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "122.202.96.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "133.125.0.0/16",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "133.167.0.0/16",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "133.167.0.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "133.242.0.0/16",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.120.0.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.120.128.0/18",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "153.121.0.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "153.121.32.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "153.121.64.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.121.128.0/18",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.125.128.0/18",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "153.125.224.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.126.0.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.126.128.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.127.0.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.127.128.0/18",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "153.127.192.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "160.16.0.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "160.16.128.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "160.27.0.0/16",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "163.43.0.0/16",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "182.48.0.0/18",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.1.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.2.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.9.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.10.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.11.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.12.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.13.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.14.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.15.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "182.48.39.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "182.163.0.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "183.181.74.0/23",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "183.181.76.0/23",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "183.181.100.0/23",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "183.181.102.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "202.181.96.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "202.222.16.0/20",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "202.255.237.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "210.188.192.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "210.188.224.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "210.224.160.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 9370,
+    "prefix": "210.229.64.0/21",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "219.94.128.0/17",
+    "type": "sakura"
+  },
+  {
+    "as": 7684,
+    "prefix": "219.94.227.0/24",
+    "type": "sakura"
+  },
+  {
+    "as": 9371,
+    "prefix": "219.109.160.0/19",
+    "type": "sakura"
+  },
+  {
+    "as": 131965,
+    "prefix": "112.78.117.0/24",
+    "type": "related"
+  },
+  {
+    "as": 10013,
+    "prefix": "112.78.220.0/24",
+    "type": "related"
+  },
+  {
+    "as": 131965,
+    "prefix": "210.188.201.0/24",
+    "type": "related"
+  },
+  {
+    "as": 10013,
+    "prefix": "210.188.210.0/24",
+    "type": "related"
+  },
+  {
+    "as": 10013,
+    "prefix": "210.188.222.0/24",
+    "type": "related"
+  },
+  {
+    "as": 10013,
+    "prefix": "210.224.183.0/24",
+    "type": "related"
+  },
+  {
+    "as": 131965,
+    "prefix": "219.94.200.0/24",
+    "type": "related"
+  },
+  {
+    "as": 131965,
+    "prefix": "219.94.201.0/24",
+    "type": "related"
+  },
+  {
+    "as": 131965,
+    "prefix": "219.94.202.0/24",
+    "type": "related"
+  },
+  {
+    "as": 131965,
+    "prefix": "219.94.203.0/24",
+    "type": "related"
+  }
+]
