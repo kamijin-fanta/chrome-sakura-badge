@@ -1,9 +1,9 @@
 var cacheExpire = 12 * 60 * 60 * 1000;  //12 hour 
 
-function render(s, tabId) {
+async function render(s, tabId) {
     var icon = s.isSakura ? "icon-enable" : "icon-disable";
     chrome.action.setBadgeText({
-        text: getAsnName(s.asn),
+        text: await getAsnName(s.asn),
         tabId: tabId
     });
     chrome.action.setBadgeBackgroundColor({
@@ -14,47 +14,42 @@ function render(s, tabId) {
         tabId: tabId
     });
 }
-function update(tabId) {
-    chrome.tabs.get(tabId, function (s) {
-        var host = s.url.split("/")[2];
+async function update(tabId) {
+    const tab = await chrome.tabs.get(tabId);
+    var host = tab.url.split("/")[2];
+    if (!host) {
+        return;
+    }
 
-        chrome.storage.local.get([host], function (result) {
-            var cache = result[host] ? JSON.parse(result[host]) : undefined;
+    const result = await chrome.storage.local.get([host]);
+    var cache = result[host] ? JSON.parse(result[host]) : undefined;
 
-            // if has old cache, delete cache
-            if (cache && (
-                !cache.date
-                || new Date(cache.date).valueOf() + cacheExpire < new Date().valueOf()
-            )) {
-                cache = undefined;
-            }
+    // if has old cache, delete cache
+    if (cache && (
+        !cache.date
+        || new Date(cache.date).valueOf() + cacheExpire < new Date().valueOf()
+    )) {
+        cache = undefined;
+    }
 
-            if (cache) {
-                render(cache, tabId);
-            } else {
-                var url = "https://kamijin.sakura.ne.jp/host.php?host=";
-                fetch(url + host)
-                    .then(s => s.json())
-                    .then(s => {
-                        s.date = new Date().valueOf();  // add date fieald
-                        var storageObj = {};
-                        storageObj[host] = JSON.stringify(s);
-                        chrome.storage.local.set(storageObj, function () {
-                            render(s, tabId);
-                        });
-                    });
-            }
+    if (cache) {
+        await render(cache, tabId);
+    } else {
+        var url = "https://kamijin.sakura.ne.jp/host.php?host=";
+        const res = await (await fetch(url + host)).json();
+        res.date = new Date().valueOf();  // add date field
+
+        await chrome.storage.local.set({
+            [host]: JSON.stringify(res),
         });
-    });
+        await render(res, tabId);
+    }
 }
-function getAsnName(asn) {
-    var showName = true;
-
-    chrome.storage.local.get(["emjemnfjellkddpigaggachjkfokfaal"], function (result) {
-        var myStorage = result["emjemnfjellkddpigaggachjkfokfaal"] ? JSON.parse(result["emjemnfjellkddpigaggachjkfokfaal"]) : undefined;
-        if (myStorage && myStorage.opt_show_name == false)
-            showName = false;
-    });
+async function getAsnName(asn) {
+    const CONFIG_KEY = "emjemnfjellkddpigaggachjkfokfaal";
+    const config = await chrome.storage.sync.get([CONFIG_KEY]);
+    const confObj = config[CONFIG_KEY] ? JSON.parse(config[CONFIG_KEY]) : undefined;
+    const showName = confObj?.opt_show_name ?? true;
 
     switch (asn) {
         case 9370:
