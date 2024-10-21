@@ -1,22 +1,23 @@
 //// clear cache
-function cacheClear(){
-    var len = localStorage.length;
-    localStorage.clear();
+async function cacheClear() {
+    var len = Object.keys(await chrome.storage.local.get(null)).length;
+    await chrome.storage.local.clear()
     alert(`${len}件のキャッシュを削除しました`);
 }
 document.getElementById('cacheClear').addEventListener('click', cacheClear);
 
 
 //// show log
-(function() {
+(async () => {
     var table = document.getElementById("cached");
-    for(var name in localStorage) {
+    const allItems = await chrome.storage.local.get(null);
+    for (var name in allItems) {
         var nameTd = document.createElement("td");
         nameTd.textContent = name;
 
         var asTd = document.createElement("td");
-        var asn = JSON.parse(localStorage.getItem(name)).asn;
-        asTd.textContent = asn?asn:"×";
+        var asn = JSON.parse(allItems[name]).asn;
+        asTd.textContent = asn ? asn : "×";
 
         var tr = document.createElement("tr");
         tr.appendChild(nameTd);
@@ -28,28 +29,28 @@ document.getElementById('cacheClear').addEventListener('click', cacheClear);
 
 
 //// option
-var extId = "emjemnfjellkddpigaggachjkfokfaal";
-var changeNameShowButton = document.getElementById('changeNameShow');
-function getShowName() {
-    var myStorage = JSON.parse(localStorage.getItem(extId));
-    return myStorage?myStorage.opt_show_name:true;
+const CONFIG_KEY = "emjemnfjellkddpigaggachjkfokfaal";
+async function getShowName() {
+    const config = await chrome.storage.sync.get([CONFIG_KEY]);
+    const confObj = config[CONFIG_KEY] ? JSON.parse(config[CONFIG_KEY]) : undefined;
+    return confObj?.opt_show_name ?? true;
 }
-function setShowName(flag) {
-    var myStorage = JSON.parse(localStorage.getItem(extId));
-    if (!myStorage)
-        myStorage =  {"isSakura":false,"asn":null};
-    myStorage.opt_show_name = flag;
-    localStorage.setItem(extId, JSON.stringify(myStorage));
+async function setShowName(flag) {
+    await chrome.storage.sync.set({
+        [CONFIG_KEY]: JSON.stringify({ opt_show_name: flag }),
+    });
 }
-function changeNameShow() {
-    setShowName(!getShowName());
-    buttonRend();
-}
-function buttonRend() {
-    changeNameShowButton.innerText = getShowName()?"名前を表示":"AS番号を表示";
+async function changeNameShow() {
+    await setShowName(!await getShowName());
+    await renderButton();
 }
 
-(function() {
-    buttonRend();
+const changeNameShowButton = document.getElementById('changeNameShow');
+async function renderButton() {
+    changeNameShowButton.innerText = await getShowName() ? "名前を表示" : "AS番号を表示";
+}
+
+(function () {
+    renderButton();
     changeNameShowButton.addEventListener('click', changeNameShow);
 })();
